@@ -11,9 +11,8 @@
     <label for="spacing">Spacing:</label>
     <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
-
     <label for="coolness">Coolness:</label>
-    <input id="coolness" type="range" name="coolness" min="10" max="200" value="10" data-sizing="px">
+    <input id="coolness" type="range" name="coolness" min="0" max="9" value="0" data-sizing="em">
 
     <label for="blur">Blur:</label>
     <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
@@ -22,7 +21,8 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="../01 - JavaScript Drum Kit/images/andy.png">
+  <img src="../01 - JavaScript Drum Kit/images/andy.png" class="background">
+  <img src='./shades.png' class="shades">
 
   <style>
 
@@ -30,13 +30,22 @@
       --base: #ffc600;
       --spacing: 10px;
       --blur: 10px;
+      --coolness: 0em;
     }
 
-    img {
+    .background {
       padding: var(--spacing);
       background: var(--base);
       filter: blur(var(--blur));
     }
+
+    .shades {
+      width: 120px;
+      position: absolute;
+      top: 11.5em;
+      left: var(--coolness);
+    }
+
 
     .hl {
       color: var(--base);
