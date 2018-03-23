@@ -122,8 +122,15 @@
     const panels = document.querySelectorAll('.panel');
 
     function toggleOpen(){
-      this.classList.toggle('open')
+      let openSiblings = document.querySelectorAll('.open')
+      if (openSiblings[0]){
+        openSiblings[0].classList.toggle('open')
+        this.classList.toggle('open')
+      } else {
+        this.classList.toggle('open')
+      }
     }
+
     function toggleActive(e){
       if (e.propertyName.includes('flex')){
         this.classList.toggle('open-active')
